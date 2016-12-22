@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+	include SessionsHelper
 	protect_from_forgery with: :exception
 
 	def current_user
@@ -9,10 +10,6 @@ class ApplicationController < ActionController::Base
 
 	def authorize
 		redirect_to '/login' unless current_user
-	end
-
-	def logged_in?
-	!current_user.nil?
 	end
 
 end

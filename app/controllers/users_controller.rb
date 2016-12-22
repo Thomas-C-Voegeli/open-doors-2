@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+	# include SessionsHelper
+
 	def index
 		if logged_in?
 			@user = current_user
@@ -19,7 +21,7 @@ class UsersController < ApplicationController
 	def create
 		user = User.new(user_params)
 		if user.save
-				session[:user_id] = user.id
+				log_in(user)
 				redirect_to '/'
 		else
 			redirect_to signup_path
@@ -29,7 +31,7 @@ class UsersController < ApplicationController
 	private
 		def user_params
 			params.require(:user).permit(:email, :password,
-																:password_confirmation)
+																		:password_confirmation)
 		end
 
 end

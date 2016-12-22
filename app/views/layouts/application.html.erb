@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
 	<head>
-			<title>Open Doors</title>
-			<%= csrf_meta_tags %>
-			<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-			<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+		<title>Open Doors</title>
+		<%= render 'shared/inline_assets/jquery_1_12_3' %>
+		<%= render 'shared/inline_assets/bootstrap_css' %>
+		<%= render 'shared/inline_assets/bootstrap_js' %>
+		<%= csrf_meta_tags %>
+
+		<%= stylesheet_link_tag "application", :media => "all" %>
+		<%= javascript_include_tag "application" %>
 	</head>
-	<body>
-
-		<h2>Open Doors</h2>
-
+	<body data-no-turbolink>
+		<% show_header ||= true %>
+		<%= render 'shared/header' %>
 		<% if current_user %>
 			Signed in as <%= current_user.email %> | <%= link_to "Logout", '/logout' %>
 		<% else %>

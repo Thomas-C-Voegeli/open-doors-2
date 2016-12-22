@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 	def current_user
 		@current_user ||= User.find(session[:user_id]) if session[:user_id]
 	end
-	# Make current_user method available to views like application.html.erb
+	# Make current_user method available to views
 	helper_method :current_user
 
 	def authorize

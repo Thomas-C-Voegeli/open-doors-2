@@ -5406,3 +5406,162 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 42ms (Views: 37.8ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/users/2" for ::1 at 2016-12-21 18:39:52 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 400ms (Views: 357.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/logout" for ::1 at 2016-12-21 18:39:55 -0800
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2016-12-21 18:39:55 -0800
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 66ms (Views: 63.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2016-12-21 18:39:57 -0800
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 47ms (Views: 44.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2016-12-21 18:40:01 -0800
+Processing by UsersController#index as HTML
+Redirected to http://localhost:3000/signup
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2016-12-21 18:40:01 -0800
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 31ms (Views: 29.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/2" for ::1 at 2016-12-21 18:40:08 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+Redirected to http://localhost:3000/signup
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2016-12-21 18:40:08 -0800
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 48ms (Views: 43.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-12-21 18:40:13 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xk/mZdB0/4IWAaSM1Lpk3OVDCDZwEHUnvdZ6nsXKlm7/Zc4+OAjmC/84QvA5x5RgdU3klOu3E2m+TbMnEHol4g==", "user"=>{"email"=>"tcvoegeli@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "tcvoegeli@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/signup
+Completed 302 Found in 143ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/signup" for ::1 at 2016-12-21 18:40:14 -0800
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 62ms (Views: 58.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2016-12-21 18:40:23 -0800
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 47ms (Views: 44.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2016-12-21 18:40:27 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GGbsQuRR0vthw99OG1Adt62vR9SPi5Ptr7DGXOfraHGJOUclQkoWtTjhRHWKXS//yjP2XIQF1PrnyX2kuWjmmA==", "email"=>"tcvoegeli@gmail.com", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tcvoegeli@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 98ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2016-12-21 18:40:27 -0800
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/Thomas/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/Thomas/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb (4.8ms)
+Completed 200 OK in 16ms (Views: 9.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2016-12-21 18:40:30 -0800
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 42ms (Views: 30.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/2" for ::1 at 2016-12-21 18:40:34 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 38ms (Views: 34.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/login" for ::1 at 2016-12-21 18:40:41 -0800
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 37ms (Views: 33.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/signup" for ::1 at 2016-12-21 18:40:45 -0800
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 36ms (Views: 32.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/logout" for ::1 at 2016-12-21 18:40:48 -0800
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2016-12-21 18:40:48 -0800
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 28ms (Views: 26.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2016-12-21 18:41:56 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3FcR0BYFRS7p45U8mIoaro7w90sp6XgED5T5206yMidNCLq3sB6BYLDBDgcJhyjm6WxGwyJnPxNH7UIjEDG8zg==", "email"=>"tcvoegeli@gmail.com", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tcvoegeli@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 98ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-12-21 18:41:57 -0800
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/Thomas/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/Thomas/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb (4.7ms)
+Completed 200 OK in 13ms (Views: 8.7ms | ActiveRecord: 0.0ms)
+
+

@@ -2,25 +2,22 @@
 <html>
 	<head>
 		<title>Open Doors</title>
-		<%= render 'shared/inline_assets/jquery_1_12_3' %>
-		<%= render 'shared/inline_assets/bootstrap_css' %>
-		<%= render 'shared/inline_assets/bootstrap_js' %>
+		<div class = "inline_asset">
+			<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+			<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		</div>
 		<%= csrf_meta_tags %>
 
 		<%= stylesheet_link_tag "application", :media => "all" %>
 		<%= javascript_include_tag "application" %>
 	</head>
+
 	<body data-no-turbolink>
 		<% show_header ||= true %>
-		<%= render 'shared/header' %>
-		<% if current_user %>
-			Signed in as <%= current_user.email %> | <%= link_to "Logout", '/logout' %>
-		<% else %>
-			<%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
-		<% end %>
-
+		<%= render "shared/header" %>
 		<div id="dashboard-container">
-			<%= render 'shared/side_navbar' %>
+			<%= render "shared/side_navbar" %>
 		</div>
 
 		<%= yield %>

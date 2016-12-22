@@ -1,6 +1,6 @@
 <div class="header">
   <div class="header-buttons">
-    <% if current_user %>
+    <% if current_user != nil %>
       <span id="greeting">Logged in as <span class="greeting-email"><%= @user.email %></span></span>
       <div class="dropdown">
         <a id="user-menu" data-target="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -8,9 +8,11 @@
         </a>
         <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="user-menu">
           <li><a href="/users/edit">My account</a></li>
-          <li><%= link_to "Sign out", logout_path %></li>
+          <li><%= link_to "Log out", logout_path %></li>
         </ul>
       </div>
+    <% else %>
+      <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
     <% end %>
   </div>
 </div>

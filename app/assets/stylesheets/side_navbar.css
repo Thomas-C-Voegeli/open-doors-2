@@ -23,12 +23,13 @@
   box-sizing: border-box;
 }
 #cssmenu {
+  top: 30px;
   background-color: #DDD;
-  border-right: 1px solid #AAA;
+  border-right: 2px solid #AAA;
+  border-bottom: 2px solid #AAA;;
   margin: 0;
   color: white;
   overflow: scroll;
-  flex: 1;
 }
 #cssmenu ul ul {
   display: none;
@@ -133,9 +134,9 @@
 }
 
 #dashboard-container {
-  width: 200px;
+  /*width: 200px;*/
 }
 
 #cssmenu {
-  width: 200px;
+  /*width: 200px;*/
 }

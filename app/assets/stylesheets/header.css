@@ -1,0 +1,33 @@
+#header-row {
+	border-bottom: 3px solid grey;
+	height: 100px;
+	color: #337ab7;
+}
+
+span#greeting {
+	top:50px;
+	right: -100px;
+	color: #337ab7;
+}
+
+.glyphicon-cog {
+	left: -20%;
+	top: 10px;
+}
+
+#user-menu {
+	top: 10px;
+	left: 0px;
+	/*color: #3B57C1;*/
+}
+
+img {
+	width: 50px;
+	height: 80px;
+	left: 150px;
+}
+
+#login-signup-menu {
+	
+	right:0px;
+}

@@ -1,1 +1,3 @@
-<h2>Dashboard</h2>
+<% if current_user %>
+	<%= render "/shared/door_index" %>
+<% end %>

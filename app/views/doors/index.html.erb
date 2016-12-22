@@ -1,5 +1,19 @@
-<h2><%= @user.email %>'s Doors Index page</h2>
-<% @doors.each do |door| %>
-	<%= door.full_address %>
-	<p></p>
-<% end %>
+<div class="door-list">
+	<table class = "table-bordered">
+	<tr>
+		<th class='deck-table-cell'>Address</th>
+		<!-- <th class='deck-table-cell'>Word</th> -->
+			<th class='deck-table-cell'>State</th>
+		<th class='deck-table-cell'>ID</th>
+	</tr><br>
+	<% @doors.each do |door| %>
+		<tr>
+			<td class='deck-table-cell col-2'><%=door.street_number %><%=door.street %></td>
+			<td class='deck-table-cell col-3'><%=door.city %></td>
+			<td class='deck-table-cell col-4'><%=door.state %></td>
+			<td class='deck-table-cell col-5'><%=door.id %></td>
+		</tr>
+	<% end %>
+	</table>
+</div>
+

@@ -1,0 +1,22 @@
+<div class="door-list">
+	<h2>All Properties</h2>
+	<table class = "table-bordered">
+	<tr>
+		<th class='deck-table-cell'>Address</th>
+		<th class='deck-table-cell'></th>
+			<th class='deck-table-cell'>State</th>
+		<th class='deck-table-cell'>ID</th>
+		<th class='deck-table-cell'>View</th>
+	</tr><br>
+	<% @doors.each do |door| %>
+		<tr>
+			<td class='deck-table-cell col-1'><%=door.street_number %> <%=door.street %></td>
+			<td class='deck-table-cell col-2'><%=door.city %></td>
+			<td class='deck-table-cell col-3'><%=door.state %></td>
+			<td class='deck-table-cell col-4'><%=door.id %></td>
+			<td class='deck-table-cell col-5'><a href='#'>Map</a></td>
+		</tr>
+	<% end %>
+	</table>
+</div>
+

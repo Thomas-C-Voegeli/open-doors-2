@@ -17,21 +17,17 @@
 
 html {
 	height: 100%;
-	display: flex;
-	flex-direction: column;
 }
 
 body {
-	display: flex;
-	flex-direction: column;
-	flex: 1 0 auto;
 	font-family "Helvetica Neue", Helvetica, Arial, sans-serif
 }
 
+h1 {
+	font-size: 50px;
+}
 #app-content {
 	display: flex;
-	flex-direction: column;
-	flex: 1 0 auto;
 	overflow: hidden;
 	height: 1px;
 }
@@ -50,17 +46,13 @@ body {
 	top: 0;
 	left: 0;
 	padding-top: 30px;
-	display: flex;
-	flex-direction: row;
 	align-items: center;
 	justify-content: space-around;
 }
 
 .alert {
-	flex: 0 0 auto;
 	z-index: 999;
 	display: flex;
-	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
 	border: none;
@@ -72,13 +64,9 @@ body {
 	box-shadow: 0px 0px 23px -1px rgba(0,0,0,0.13);
 }
 
-.alert li i {
-	flex: 0 0 auto;
-}
 
 .alert li a {
 	margin-left: 20px;
-	flex: 0 0 auto;
 }
 
 .alert li i {
@@ -111,21 +99,11 @@ body {
 				url('/fonts/century-gothic.woff') format('woff');
 }
 
-.glyphicon-cog {
-	left: -40px;
-	height: 20px;
+.deck-table-cell {
+	width: 15%;
+	height: 40px;
+	text-align: center;
 }
-.inline-asset {
-	display: none;
-}
-#user-menu {
-	left: 0px;
-}
-div#left-navbar {
-	top: 50px;
-	left: 0px;
-}
-#header-row {
-	bottom: 0px;
-	height: 100px;
+.table-bordered {
+	top:100px;
 }

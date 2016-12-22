@@ -4,6 +4,7 @@ class Door < ApplicationRecord
 	validates :country, :state, :city, :street, :street_number, :zipcode, presence: true
 
 	def full_address
-    return "#{self.street_number} #{self.street}, #{self.city}, #{self.state}, #{self.country} #{self.zipcode}"
+    "#{self.street_number} #{self.street}, #{self.city}, #{self.state}, #{self.country} #{self.zipcode}"
   end
+
 end

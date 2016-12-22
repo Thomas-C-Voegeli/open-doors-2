@@ -1,2 +1,0 @@
-class UsersDoor < ApplicationRecord
-end

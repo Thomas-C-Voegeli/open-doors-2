@@ -1,0 +1,20 @@
+<div class="container">		
+	<div class="row">
+		<div class="col-md-9">
+			<h2>New Property</h2>
+
+			<%= form_for :door, url: '/doors' do |f| %>
+
+				Country: <%= f.text_field :country %>
+				State: <%= f.text_field :state %><br>
+				City: <%= f.text_field :city %>
+				Street: <%= f.text_field :street %><br>
+				Street Number: <%= f.text_field :street_number %>
+				Zipcode: <%= f.text_field :zipcode %>
+				
+				<%= f.submit "Submit" %>
+
+			<% end %>
+		</div>
+	</div>
+</div>

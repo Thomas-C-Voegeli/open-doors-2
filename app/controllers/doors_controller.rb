@@ -10,10 +10,18 @@ class DoorsController < ApplicationController
 		end
 	end
 
+	def create
+		@user = current_user
+		door = @user.doors.create(country: params[:country], state: params[:state], city: params[:city], street: params[:street], street_number: params[:street_number], zipcode: params[:zipcode])
+		if door.save
+			redirect_to root_path
+		else
+			redirect_to new_door_path
+		end
+	end
+
 	def edit
 		if logged_in?
-			@user = current_user
-			@doors = @user.doors.all
 			@door = Door.find(params[:id])
 			render :edit
 		else
@@ -21,19 +29,16 @@ class DoorsController < ApplicationController
 		end
 	end
 
-	def create
-		door = Door.new(country: params[:country], state: params[:state], city: params[:city], street: params[:street], street_number: params[:street_number], zipcode: params[:zipcode])
-		if door.save
-			redirect_to root_path
-		else
-			redirect_to edit_door_path
-		end
+	def new
 	end
 
 	def update
 		@door = Door.find(params[:id])
-		@door.update(country: params[:country], state: params[:state], city: params[:city], street: params[:street], street_number: params[:street_number], zipcode: params[:zipcode])
-		redirect_to door_path(@door)
+		if @door.update(country: params[:country], state: params[:state], city: params[:city], street: params[:street], street_number: params[:street_number], zipcode: params[:zipcode])
+			redirect_to door_path(@door)
+		else
+			render :edit
+		end
 	end
 
 end

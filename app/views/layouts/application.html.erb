@@ -16,6 +16,10 @@
 			<%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
 		<% end %>
 
+		<div id="dashboard-container">
+			<%= render 'shared/side_navbar' %>
+		</div>
+
 		<%= yield %>
 
 	</body>

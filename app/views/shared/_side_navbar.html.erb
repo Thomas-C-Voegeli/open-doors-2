@@ -5,39 +5,46 @@
       <a href='#'>Vendors</a>
       <ul>
         <li>
-          <a href='#' class='show-student-create-form'>
-            <i class="glyphicon glyphicon-plus"></i>
+          <a href='#' class='show-menu-option'>
             Find a Contractor
           </a>
         </li>
-        <!-- <li> -->
-          <!-- render 'shared/group_students_link' -->
-        <!-- </li> -->
       </ul>
     </li>
-    <!-- if @ungrouped != [] -->
-    <% if 1+2==4 %>
-      <li class='has-sub'>
-        <!-- if @user.license.should_group_students == false -->
-        <% if 1+2==4%>
-          <a href='#'>
-            Students
+    <li class='has-sub'>
+      <a href='#'>Doors</a>
+      <ul>
+        <li>
+          <a href='#' class='show-menu-option'>
+            Show All
           </a>
-        <% else %>
-          <a href='#'>
-            Ungrouped
+        </li>
+        <li>
+          <a href='#' class='show-menu-option'>
+            Payments
           </a>
-        <% end %>
-        <ul>
-          <% @doors.each do |door| %>
-            <li>
-              <a href='#<%= door.id %>' data-student-id="<%= door.id %>" class="show-student-dashboard">
-                <%= "#{door.street_number} #{door.street}" %>
-              </a>
-            </li>
-          <% end %>
-        </ul>
-      </li>
-    <% end %>
+        </li>
+        <li>
+          <a href='#' class='show-menu-option'>
+            Work Orders
+          </a>
+        </li>
+        <li>
+          <a href='#' class='show-menu-option'>
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li class='has-sub'>
+      <a href='#'>Communications</a>
+      <ul>
+        <li>
+          <a href='#' class='show-menu-option'>
+            Dashboard
+          </a>
+        </li>
+      </ul>
+    </li>
   </ul>
 </div>
+

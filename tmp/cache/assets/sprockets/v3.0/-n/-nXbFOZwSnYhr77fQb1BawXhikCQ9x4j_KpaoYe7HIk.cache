@@ -1,0 +1,85 @@
+I"(function() {
+  $(function() {
+    var Dashboard;
+    Dashboard = {
+      showDashboardSection: function(clickTarget) {
+        if ($(clickTarget).next('.section-content').is(':hidden')) {
+          $('.dashboard-section .section-content:visible').slideUp('fast');
+          $(clickTarget).next('.section-content').slideDown('fast');
+        } else {
+          $(clickTarget).next('.section-content').slideUp('fast');
+        }
+        return this.resizeCharts();
+      },
+      handleMenuClick: function(clickTarget) {
+        var element;
+        $(clickTarget).removeAttr('href');
+        element = $(clickTarget).parent('li');
+        if (!element.hasClass('open')) {
+          $('a.show-group-dashboard').removeClass('active');
+          element.addClass('active');
+          return this.expandNavItem(element);
+        }
+      },
+      expandNavItem: function(element) {
+        element.addClass('open');
+        element.children('ul').slideDown(200);
+        element.siblings('li').children('ul').slideUp(200);
+        element.siblings('li').removeClass('open');
+        element.siblings('li').find('li').removeClass('open');
+        return element.siblings('li').find('ul').slideUp(200);
+      },
+      expandDefaultNavItem: function() {
+        var element;
+        if (!window.location.hash) {
+          element = $('li#default-nav-item');
+          return this.expandNavItem(element);
+        }
+      },
+      restoreDashboardFromUrl: function() {
+        var groupElement, studentId, studentLink;
+        studentId = window.location.hash.replace('#', '');
+        if (studentId) {
+          studentLink = $('a[data-student-id=' + studentId + ']');
+          this.showStudentDashboard(studentLink);
+          groupElement = studentLink.parents('li:has(a[data-group-id])').children('a[data-group-id]')[0];
+          return this.handleMenuClick(groupElement);
+        }
+      },
+      showDashboard: function(clickTarget, selector) {
+        this.clearDashboard();
+        $(selector).show();
+        $('a.show-group-dashboard').removeClass('active');
+        return $(clickTarget).addClass('active');
+      },
+      clearDashboard: function() {
+        $('.dashboard').hide();
+        $('.student-edit-form').hide();
+        $('.student-create-form').hide();
+        $('.show-student-dashboard').removeClass('active');
+        return $('.show-group-dashboard').removeClass('active');
+      },
+      bindEvents: function() {
+        var self;
+        self = this;
+        $('.dashboard-section .section-header').click(function() {
+          return self.showDashboardSection(this);
+        });
+        $('#cssmenu li.has-sub>a').click(function() {
+          return self.handleMenuClick(this);
+        });
+        $('.show-student-dashboard').click(function() {
+          return self.showStudentDashboard(this);
+        });
+        return $('.show-group-dashboard').click(function() {
+          return self.showGroupDashboard(this);
+        });
+      }
+    };
+    Dashboard.bindEvents();
+    Dashboard.restoreDashboardFromUrl();
+    return Dashboard.expandDefaultNavItem();
+  });
+
+}).call(this);
+:ET

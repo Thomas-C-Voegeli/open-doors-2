@@ -6,10 +6,106 @@
  * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
  *
  * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
  *
  *= require_tree .
  *= require_self
  */
+
+html {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+  font-family "Helvetica Neue", Helvetica, Arial, sans-serif
+}
+
+#app-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+  overflow: hidden;
+  height: 1px;
+}
+
+.page-header {
+  color: #0570A0;
+  font-weight: 900;
+  border-bottom: none;
+}
+
+/*flash*/
+
+.flash-container {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.alert {
+  flex: 0 0 auto;
+  z-index: 999;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+  /* Flash is hidden until document.ready so that the loading modal doesn't cover it */
+  /* See application.coffee */
+  display: none;
+  -webkit-box-shadow: 0px 0px 23px -1px rgba(0,0,0,0.13);
+  -moz-box-shadow: 0px 0px 23px -1px rgba(0,0,0,0.13);
+  box-shadow: 0px 0px 23px -1px rgba(0,0,0,0.13);
+}
+
+.alert li i {
+  flex: 0 0 auto;
+}
+
+.alert li a {
+  margin-left: 20px;
+  flex: 0 0 auto;
+}
+
+.alert li i {
+  margin-right: 5px;
+}
+
+.alert ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.alert-error, .alert-alert {
+    background-color: rgb(220, 100, 100);
+    color: white;
+ }
+
+.alert-success {
+    background-color: rgb(113, 179, 113);
+    color: white;
+ }
+
+.alert-notice {
+    background-color: rgb(86, 169, 193);
+    color: white;
+ }
+
+@font-face {
+  font-family: 'Gothic';
+  src:  url('/fonts/century-gothic.woff2') format('woff2'),
+        url('/fonts/century-gothic.woff') format('woff');
+}

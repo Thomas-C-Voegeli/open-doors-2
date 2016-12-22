@@ -14332,3 +14332,95 @@ Processing by DoorsController#index as HTML
 Completed 200 OK in 119ms (Views: 58.4ms | ActiveRecord: 6.4ms)
 
 
+Started GET "/" for ::1 at 2016-12-22 02:07:45 -0800
+Processing by DoorsController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "doors" ("country", "state", "city", "street", "street_number", "zipcode", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["country", "USA"], ["state", "IL"], ["city", "Bloomington"], ["street", "Sparrow Ln."], ["street_number", "123"], ["zipcode", "54321"], ["created_at", 2016-12-22 10:07:45 UTC], ["updated_at", 2016-12-22 10:07:45 UTC]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "doors_users" ("user_id", "door_id") VALUES (?, ?)[0m  [["user_id", 3], ["door_id", 157]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendering doors/index.html.erb within layouts/application
+  [1m[36mDoor Load (1.8ms)[0m  [1m[34mSELECT "doors".* FROM "doors" INNER JOIN "doors_users" ON "doors"."id" = "doors_users"."door_id" WHERE "doors_users"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered doors/index.html.erb within layouts/application (13.0ms)
+  Rendered shared/_header.html.erb (12.9ms)
+  Rendered shared/_side_navbar.html.erb (0.7ms)
+Completed 200 OK in 292ms (Views: 245.9ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/" for ::1 at 2016-12-22 02:07:50 -0800
+Processing by DoorsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "doors" ("country", "state", "city", "street", "street_number", "zipcode", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["country", "USA"], ["state", "IL"], ["city", "Bloomington"], ["street", "Sparrow Ln."], ["street_number", "123"], ["zipcode", "54321"], ["created_at", 2016-12-22 10:07:50 UTC], ["updated_at", 2016-12-22 10:07:50 UTC]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "doors_users" ("user_id", "door_id") VALUES (?, ?)[0m  [["user_id", 3], ["door_id", 158]]
+  [1m[35m (9.3ms)[0m  [1m[36mcommit transaction[0m
+  Rendering doors/index.html.erb within layouts/application
+  [1m[36mDoor Load (0.6ms)[0m  [1m[34mSELECT "doors".* FROM "doors" INNER JOIN "doors_users" ON "doors"."id" = "doors_users"."door_id" WHERE "doors_users"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered doors/index.html.erb within layouts/application (4.8ms)
+  Rendered shared/_header.html.erb (1.1ms)
+  Rendered shared/_side_navbar.html.erb (0.6ms)
+Completed 200 OK in 59ms (Views: 37.8ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/" for ::1 at 2016-12-22 02:09:41 -0800
+Processing by DoorsController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "doors" ("country", "state", "city", "street", "street_number", "zipcode", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["country", "USA"], ["state", "IL"], ["city", "Bloomington"], ["street", "Sparrow Ln."], ["street_number", "123"], ["zipcode", "54321"], ["created_at", 2016-12-22 10:09:41 UTC], ["updated_at", 2016-12-22 10:09:41 UTC]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "doors_users" ("user_id", "door_id") VALUES (?, ?)[0m  [["user_id", 3], ["door_id", 159]]
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  Rendering doors/index.html.erb within layouts/application
+  [1m[36mDoor Load (2.7ms)[0m  [1m[34mSELECT "doors".* FROM "doors" INNER JOIN "doors_users" ON "doors"."id" = "doors_users"."door_id" WHERE "doors_users"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered doors/index.html.erb within layouts/application (18.3ms)
+  Rendered shared/_header.html.erb (3.0ms)
+  Rendered shared/_side_navbar.html.erb (3.0ms)
+Completed 200 OK in 209ms (Views: 123.9ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/logout" for ::1 at 2016-12-22 02:10:00 -0800
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2016-12-22 02:10:00 -0800
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (16.4ms)
+  Rendered shared/_header.html.erb (1.9ms)
+  Rendered shared/_side_navbar.html.erb (1.2ms)
+Completed 200 OK in 80ms (Views: 75.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2016-12-22 02:10:03 -0800
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.2ms)
+  Rendered shared/_header.html.erb (2.7ms)
+  Rendered shared/_side_navbar.html.erb (0.8ms)
+Completed 200 OK in 47ms (Views: 43.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2016-12-22 02:10:11 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VyVurCpRwb9q0KEevwAVmA0dXsjA5GtV3b7XZxH0CaWQOOKPbz/jdbIdRjQEwDPIvniIHIXR7Wraf5YpckxHuA==", "email"=>"a@a.com", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "a@a.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 96ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-12-22 02:10:11 -0800
+Processing by DoorsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "doors" ("country", "state", "city", "street", "street_number", "zipcode", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["country", "USA"], ["state", "IL"], ["city", "Bloomington"], ["street", "Sparrow Ln."], ["street_number", "123"], ["zipcode", "54321"], ["created_at", 2016-12-22 10:10:11 UTC], ["updated_at", 2016-12-22 10:10:11 UTC]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "doors_users" ("user_id", "door_id") VALUES (?, ?)[0m  [["user_id", 3], ["door_id", 160]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  Rendering doors/index.html.erb within layouts/application
+  [1m[36mDoor Load (0.7ms)[0m  [1m[34mSELECT "doors".* FROM "doors" INNER JOIN "doors_users" ON "doors"."id" = "doors_users"."door_id" WHERE "doors_users"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered doors/index.html.erb within layouts/application (4.1ms)
+  Rendered shared/_header.html.erb (1.0ms)
+  Rendered shared/_side_navbar.html.erb (1.0ms)
+Completed 200 OK in 65ms (Views: 39.0ms | ActiveRecord: 2.7ms)
+
+

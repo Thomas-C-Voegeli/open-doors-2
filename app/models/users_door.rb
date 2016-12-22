@@ -1,0 +1,2 @@
+class UsersDoor < ApplicationRecord
+end

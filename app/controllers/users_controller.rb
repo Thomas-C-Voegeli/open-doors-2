@@ -17,6 +17,7 @@ class UsersController < ApplicationController
 	def show
 		if logged_in?
 			@user = current_user
+			@doors = @user.doors.all
 		else
 			redirect_to signup_path
 		end

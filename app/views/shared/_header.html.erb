@@ -2,10 +2,10 @@
   <div class="header-buttons">
     <div class="container">
       <div class="row">
-        <div class="col-md-5"><h1><img src="http://images.clipartpanda.com/door-clipart-pull-open-door-clipart-1.jpg"> OpenDoors</h1></div>
+        <div class="col-md-5"><h1><img src="http://images.clipartpanda.com/door-clipart-pull-open-door-clipart-1.jpg">OpenDoors</h1></div>
         <% if current_user != nil %>
           <div class = "col-md-4"></div>
-          <div class = "col-md-2"><span id="greeting">logged in as <span class="greeting-email"><%= @user.email %></span></span></div>
+          <div class = "col-md-2"><span id="greeting">logged in as <span class="greeting-email"><%= current_user.email %></span></span></div>
           <div class = "col-md-1">
             <div class="dropdown">
               <a id="user-menu" data-target="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">

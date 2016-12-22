@@ -1,0 +1,21 @@
+<%= form_tag doors_path do %>
+  <!-- <label>Address:</label> -->
+  <%= text_field_tag :street_number, @door.street_number, size: 6 %>
+
+  <!-- <label>Street:</label> -->
+  <%= text_area_tag :street, @door.street %>
+
+  <!-- <label>City:</label> -->
+  <%= text_area_tag :city, @door.city %>
+
+  <!-- <label>State:</label> -->
+  <%= text_area_tag :state, @door.state %>
+
+  <!-- <label>Country:</label><br> -->
+  <%= text_area_tag :country, @door.country %>
+
+  <!-- <label>Zip Code:</label><br> -->
+  <%= text_area_tag :zipcode, @door.zipcode %>
+
+  <%= submit_tag "Update" %>
+<% end %>

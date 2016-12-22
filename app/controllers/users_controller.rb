@@ -8,6 +8,12 @@ class UsersController < ApplicationController
 		end
 	end
 
+	def new
+		if logged_in?
+			redirect_to '/users'
+		end
+	end
+
 	def show
 		if logged_in?
 			@user = current_user

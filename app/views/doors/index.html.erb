@@ -1,0 +1,4 @@
+<h2><%= @user.email %>'s Doors Index page</h2>
+<%= @doors.each do |door| %>
+	<%= door.street_number %>
+<%= end %>

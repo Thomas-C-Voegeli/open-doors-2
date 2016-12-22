@@ -3,8 +3,6 @@ class DoorsController < ApplicationController
 	def index
 		if logged_in?
 			@user = current_user
-			# This code below was uncommented to create Door instances for my users as I logged on and off.
-			# @user.doors.create(country: "USA", state: "WA", city: "Bellingham", street: "Whitewater Dr.", street_number: "909", zipcode: "54321")
 			@doors = @user.doors.all
 		else
 			redirect_to login_path

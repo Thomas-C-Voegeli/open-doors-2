@@ -1,21 +1,27 @@
-<div class="property-edit-form">
+<div class="container">   
+  <div class="row">
+    <div class="col-md-12">
+      <div class="property-edit-form">
+      <h2>Edit this Property</h2>
+        <%= form_tag doors_path do %>
 
-  <%= form_tag doors_path do %>
+          <%= text_area_tag :street_number, @door.street_number%>
+          <%= text_area_tag :street, @door.street %><br>
+          <%= text_area_tag :city, @door.city %>
+          <%= text_area_tag :state, @door.state %><br>
+          <%= text_area_tag :country, @door.country %>
+          <%= text_area_tag :zipcode, @door.zipcode %><br>
 
-    <%= text_area_tag :street_number, @door.street_number%>
-    <%= text_area_tag :street, @door.street %><br>
-    <%= text_area_tag :city, @door.city %>
-    <%= text_area_tag :state, @door.state %><br>
-    <%= text_area_tag :country, @door.country %>
-    <%= text_area_tag :zipcode, @door.zipcode %><br>
+          <%= submit_tag "Update Record " %>
+        <% end %>
 
-    <%= submit_tag "Update Record " %>
-  <% end %>
+        <%= form_for @door, method: :delete do |f| %>
 
-  <%= form_for @door, method: :delete do |f| %>
+          <%= submit_tag " Delete Record " %>
 
-    <%= submit_tag " Delete Record " %>
-
-  <% end %>
-  
+        <% end %>
+        
+      </div>
+    </div>
+  </div>
 </div>

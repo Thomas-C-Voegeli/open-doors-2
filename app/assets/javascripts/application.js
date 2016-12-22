@@ -11,17 +11,19 @@
 // about supported directives.
 //= require jquery
 //= require jquery_ujs
+
+// Got a bit of a start on ajaxifying some of the menu buttons/links, I started in application.js just for the initial ease of it, these would later be moved off to other locations more suited to them
 // $(document).ready(function() {
 
-// 	$('#show-all-doors').click(function(event) {
-// 		event.preventDefault();
-// 		console.log("Prevent");
+//  $('#show-all-doors').click(function(event) {
+//    event.preventDefault();
+//    console.log("Prevent");
 
-	  //  $.ajax({
+		//  $.ajax({
 
 		 //   method: "GET",
 		 //   url: '/doors',
-		 //   data: getSelectedText()
+		 // data: 
 
 		 // })
 	// });
@@ -32,22 +34,22 @@
 	// targetRow.append
 
 	// $('.deck-table-cell.edit-link').click(function(event) {
- //    	targetId = event.target.id;
-	// 		console.log(targetId);
- //    	event.preventDefault();
- //    	console.log("CLICK");
-    	
+ //     targetId = event.target.id;
+	//    console.log(targetId);
+ //     event.preventDefault();
+ //     console.log("CLICK");
+			
  //    });
 
 		// $.ajax({
 
-		// 	method: "GET",
-		// 	url: path
+		//  method: "GET",
+		//  url: path
 
 		// })
 
 		// .done(function(response){
-		// 		console.log(response);
+		//    console.log(response);
 		// })
 			
 // })

@@ -1,7 +1,7 @@
 <div class="container">		
 	<div class="row">
-		<div class="col-md-9">
-			<h2>New Property</h2>
+		<div class="col-md-12">
+			<h2>Add a New Property</h2>
 
 			<%= form_for :door, url: '/doors' do |f| %>
 
@@ -12,7 +12,7 @@
 				Street Number: <%= f.text_field :street_number %>
 				Zipcode: <%= f.text_field :zipcode %>
 				
-				<%= f.submit "Submit" %>
+				<%= f.submit "Add" %>
 
 			<% end %>
 		</div>

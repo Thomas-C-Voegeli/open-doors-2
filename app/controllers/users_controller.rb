@@ -1,7 +1,5 @@
 class UsersController < ApplicationController
 
-	# include SessionsHelper
-
 	def index
 		if logged_in?
 			@user = current_user

@@ -3,6 +3,7 @@ class DoorsController < ApplicationController
 	def index
 		if logged_in?
 			@user = current_user
+			# This code below was uncommented to create Door instances for my users as I logged on and off.
 			# @user.doors.create(country: "USA", state: "WA", city: "Bellingham", street: "Whitewater Dr.", street_number: "909", zipcode: "54321")
 			@doors = @user.doors.all
 		else
@@ -12,7 +13,7 @@ class DoorsController < ApplicationController
 
 	def create
 		@user = current_user
-		door = @user.doors.create(country: params[:country], state: params[:state], city: params[:city], street: params[:street], street_number: params[:street_number], zipcode: params[:zipcode])
+		door = @user.doors.create(door_params)
 		if door.save
 			redirect_to root_path
 		else
@@ -34,11 +35,22 @@ class DoorsController < ApplicationController
 
 	def update
 		@door = Door.find(params[:id])
-		if @door.update(country: params[:country], state: params[:state], city: params[:city], street: params[:street], street_number: params[:street_number], zipcode: params[:zipcode])
+		if @door.update(door_params)
 			redirect_to door_path(@door)
 		else
 			render :edit
 		end
 	end
+
+	def destroy
+		door = Door.find(params[:id])
+		door.destroy
+		redirect_to root_path
+	end
+
+	private
+		def door_params
+			params.require(:door).permit(:country, :state, :city, :street, :street_number, :zipcode)
+		end
 
 end

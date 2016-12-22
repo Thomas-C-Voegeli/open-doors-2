@@ -1,4 +1,4 @@
-<div class="door-list">
+<div class="dashboard-container">
 	<h2>All Properties</h2>
 	<table class = "table-bordered">
 	<tr>
@@ -12,7 +12,7 @@
 	</tr>
 	<% @doors.each do |door| %>
 		<tr id="table-row-<%= door.id %>">
-			<td class='deck-table-cell edit-link' id="<%= door.id %>"><a href="/doors/<%=door.id%>/edit">Edit</a></td>
+			<td class='deck-table-cell edit-link' id="<%= door.id %>"><a href="/doors/<%=door.id%>/edit">Edit / Delete</a></td>
 			<td class='deck-table-cell col-0'><%= door.id %></td>
 			<td class='deck-table-cell col-1'><%= door.street_number %> <%=door.street %></td>
 			<td class='deck-table-cell col-2'><%= door.city %></td>

@@ -2,14 +2,16 @@
 	<h2>All Properties</h2>
 	<table class = "table-bordered">
 	<tr>
+		<td class='deck-table-cell'></td>
 		<th class='deck-table-cell'>Address</th>
-		<th class='deck-table-cell'></th>
+		<th class='deck-table-cell'>City</th>
 			<th class='deck-table-cell'>State</th>
 		<th class='deck-table-cell'>ID</th>
 		<th class='deck-table-cell'>View</th>
 	</tr><br>
 	<% @doors.each do |door| %>
-		<tr>
+		<tr id="table-row-<%= door.id %>">
+			<td class='deck-table-cell col-0'><a href='#'>Edit</a></td>
 			<td class='deck-table-cell col-1'><%=door.street_number %> <%=door.street %></td>
 			<td class='deck-table-cell col-2'><%=door.city %></td>
 			<td class='deck-table-cell col-3'><%=door.state %></td>

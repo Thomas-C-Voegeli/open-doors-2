@@ -1,17 +1,18 @@
-<div class="container">
+<div class="container">		
 	<div class="row">
 		<div class="col-md-6">
-			<h2>Login</h2>
-
-			<%= form_tag '/login' do %>
-
-				Email: <%= text_field_tag :email %>
-				Password: <%= password_field_tag :password %>
-				<%= submit_tag "Submit" %>
-
-			<% end %>
-		</div>
-		<div class="col-md-6">
+			<form action="/upload" class="new_user" id="new_user" method="post">
+				<div class="form-group" id="user-dash-form">
+					<h2>Login</h2>
+					<label for="inputEmail">Email address</label>
+					<input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+				</div>
+				<div class="form-group">
+					<label for="inputPassword">Password</label>
+					<input type="password" name="password" class="form-control" id="password-input" placeholder="Password">
+				</div>
+				<button type="submit" class="btn btn-primary">Login</button>
+			</form>
 		</div>
 	</div>
 </div>

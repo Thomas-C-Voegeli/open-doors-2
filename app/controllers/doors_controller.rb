@@ -1,12 +1,9 @@
 class DoorsController < ApplicationController
+	before_filter :authorize
 
 	def index
-		if logged_in?
-			@user = current_user
-			@doors = @user.doors.all
-		else
-			redirect_to login_path
-		end
+		@user = current_user
+		@doors = @user.doors.all
 	end
 
 	def create
@@ -20,12 +17,8 @@ class DoorsController < ApplicationController
 	end
 
 	def edit
-		if logged_in?
-			@door = Door.find(params[:id])
-			render :edit
-		else
-			redirect_to login_path
-		end
+		@door = Door.find(params[:id])
+		render :edit
 	end
 
 	def new
@@ -42,7 +35,16 @@ class DoorsController < ApplicationController
 
 	def destroy
 		door = Door.find(params[:id])
-		door.destroy
+
+		if door.user.id == current_user.id
+			if door.destroy
+				flash[:success] = "Record deleted"
+			else
+				flash[:error] = "Error deleting that record"
+		else
+			flash[:error] = "You don't have permission to delete that record"
+		end
+
 		redirect_to root_path
 	end
 

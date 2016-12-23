@@ -26,78 +26,6 @@ body {
 h1 {
 	font-size: 50px;
 }
-#app-content {
-	display: flex;
-	overflow: hidden;
-	height: 1px;
-}
-
-.page-header {
-	color: #0570A0;
-	font-weight: 900;
-	border-bottom: none;
-}
-
-/*flash*/
-
-.flash-container {
-	position: fixed;
-	width: 100%;
-	top: 0;
-	left: 0;
-	padding-top: 30px;
-	align-items: center;
-	justify-content: space-around;
-}
-
-.alert {
-	z-index: 999;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	border: none;
-	/* Flash is hidden until document.ready so that the loading modal doesn't cover it */
-	/* See application.coffee */
-	display: none;
-	-webkit-box-shadow: 0px 0px 23px -1px rgba(0,0,0,0.13);
-	-moz-box-shadow: 0px 0px 23px -1px rgba(0,0,0,0.13);
-	box-shadow: 0px 0px 23px -1px rgba(0,0,0,0.13);
-}
-
-
-.alert li a {
-	margin-left: 20px;
-}
-
-.alert li i {
-	margin-right: 5px;
-}
-
-.alert ul {
-	list-style-type: none;
-	padding-left: 0;
-}
-
-.alert-error, .alert-alert {
-		background-color: rgb(220, 100, 100);
-		color: white;
- }
-
-.alert-success {
-		background-color: rgb(113, 179, 113);
-		color: white;
- }
-
-.alert-notice {
-		background-color: rgb(86, 169, 193);
-		color: white;
- }
-
-@font-face {
-	font-family: 'Gothic';
-	src:  url('/fonts/century-gothic.woff2') format('woff2'),
-				url('/fonts/century-gothic.woff') format('woff');
-}
 
 .deck-table-cell {
 	width: 10%;
@@ -107,4 +35,17 @@ h1 {
 
 .table-bordered {
 	top:100px;
+}
+
+#user-dash-form {
+
+}
+
+h3#loginErrMsg {
+	position: absolute;
+	top: 300px;
+	left: 25px;
+	width: 500px;
+	color: #FF0000;
+	text-align:center;
 }

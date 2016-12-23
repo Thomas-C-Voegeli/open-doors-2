@@ -12,47 +12,48 @@
 //= require jquery
 //= require jquery_ujs
 
-// Got a bit of a start on ajaxifying some of the menu buttons/links, I started in application.js just for the initial ease of it, these would later be moved off to other locations more suited to them
+// // Got a bit of a start on ajaxifying some of the menu buttons/links, I started in application.js just for the initial ease of it, these would later be moved off to other locations more suited to them
 // $(document).ready(function() {
 
-//  $('#show-all-doors').click(function(event) {
-//    event.preventDefault();
-//    console.log("Prevent");
+// 	$('#show-all-doors').click(function(event) {
+// 	 event.preventDefault();
+// 	 console.log("Prevent");
 
-		//  $.ajax({
+// 		$.ajax({
 
-		 //   method: "GET",
-		 //   url: '/doors',
-		 // data: 
+// 			method: "GET",
+// 			url: '/doors',
+// 			data: 
 
-		 // })
-	// });
+// 		})
+// 	});
 
-	// targetRow = $('#table-row-'+targetId);
-	// console.log(targetRow);
-	// var path = '/doors/'+targetId+'/edit'
-	// targetRow.append
+// 	targetRow = $('#table-row-'+targetId);
+// 	console.log(targetRow);
+// 	var path = '/doors/'+targetId+'/edit'
+// 	targetRow.append
 
-	// $('.deck-table-cell.edit-link').click(function(event) {
- //     targetId = event.target.id;
-	//    console.log(targetId);
- //     event.preventDefault();
- //     console.log("CLICK");
+// 	$('.deck-table-cell.edit-link').click(function(event) {
+// 		 var targetId = event.target.id;
+// 		 console.log(targetId);
+// 		 event.preventDefault();
+// 		 console.log("CLICK");
 			
- //    });
+// 		});
 
-		// $.ajax({
+// 		$.ajax({
 
-		//  method: "GET",
-		//  url: path
+// 		  method: "GET",
+// 		  url: path,
+//			data: 
 
-		// })
+// 		})
 
-		// .done(function(response){
-		//    console.log(response);
-		// })
-			
-// })
+// 		.done(function(response){
+// 			 console.log(response);
+// 		})
+// 	})
+// });
 
 
 $(function() {
@@ -106,6 +107,24 @@ $(function() {
 			});
 		}
 	};
+
+	function validateInput() {
+		// var userID = document.getElementById("userID").value;
+		// var userPass = document.getElementById("userPass").value;
+
+		// nav.enableDisableButton('LogIn', (userID != "") && (userPass != ""))
+
+		// document.getElementById("loginErrMsg").className = "hidden";
+	}
+
+	function onLogIn() {
+		// if (nav.isButtonEnabled('LogIn')) {
+			// var userID = document.getElementById("userID").value;
+			// var userPass = document.getElementById("userPass").value;
+		// 	nav.disableButton('LogIn');
+		// }
+		// document.getElementById("loginErrMsg").className = "hidden";
+	}
 
 	Dashboard.bindEvents();
 	return Dashboard.expandDefaultNavItem();

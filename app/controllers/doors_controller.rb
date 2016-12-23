@@ -8,10 +8,11 @@ class DoorsController < ApplicationController
 
 	def create
 		@user = current_user
-		door = @user.doors.create(door_params)
-		if door.save
+		@door = @user.doors.create(country: params[:country], state: params[:state], city: params[:city], street: params[:street], street_number: params[:zipcode], zipcode: params[:zipcode])
+		if @door.save
 			redirect_to root_path
 		else
+			flash[:error] = "Error adding that record"
 			redirect_to new_door_path
 		end
 	end
@@ -41,6 +42,7 @@ class DoorsController < ApplicationController
 				flash[:success] = "Record deleted"
 			else
 				flash[:error] = "Error deleting that record"
+			end
 		else
 			flash[:error] = "You don't have permission to delete that record"
 		end

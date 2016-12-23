@@ -1,15 +1,18 @@
 <div class="container">		
 	<div class="row">
-		<div class="col-md-6">
-			<form action="/upload" class="new_user" id="new_user" method="post">
-				<div class="form-group" id="user-dash-form">
+		<div class="col-md-6" id="user-dash-form">
+			<form action="/login" class="new_user" id="new_user" method="post">
+				<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+				<div class="form-group">
 					<h2>Login</h2>
 					<label for="inputEmail">Email address</label>
 					<input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+					<small id="emailHelp" class="form-text text-muted">.</small>
 				</div>
 				<div class="form-group">
 					<label for="inputPassword">Password</label>
 					<input type="password" name="password" class="form-control" id="password-input" placeholder="Password">
+					<small id="passwordHelp" class="form-text text-muted">.</small>
 				</div>
 				<button type="submit" class="btn btn-primary">Login</button>
 			</form>

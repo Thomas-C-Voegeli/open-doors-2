@@ -111,16 +111,13 @@ $(function() {
 	function validateInput() {
 		// var userID = document.getElementById("userID").value;
 		// var userPass = document.getElementById("userPass").value;
-
-		// nav.enableDisableButton('LogIn', (userID != "") && (userPass != ""))
-
 		// document.getElementById("loginErrMsg").className = "hidden";
 	}
 
 	function onLogIn() {
 		// if (nav.isButtonEnabled('LogIn')) {
 			// var userID = document.getElementById("userID").value;
-			// var userPass = document.getElementById("userPass").value;
+			// var userPass = document.getElementById("password-input").value;
 		// 	nav.disableButton('LogIn');
 		// }
 		// document.getElementById("loginErrMsg").className = "hidden";

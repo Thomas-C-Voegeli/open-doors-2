@@ -1,6 +1,3 @@
-#app-content-overlay {
-  left: 220px;
-}
 #cssmenu-underlay {
   position: fixed;
   height: 100%;
@@ -131,12 +128,4 @@
 #cssmenu ul ul > li.has-sub > a:before {
   top: 20px;
   background: #dddddd;
-}
-
-#dashboard-container {
-  /*width: 200px;*/
-}
-
-#cssmenu {
-  /*width: 200px;*/
 }

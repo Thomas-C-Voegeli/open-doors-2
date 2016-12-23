@@ -1,9 +1,9 @@
 <div class="container">		
 	<div class="row">
 		<div class="col-md-6" id="user-dash-form">
-			<form action="/users" class="new_user" id="new_user" method="post">
+			<form action="/users" class="user" id="user" method="post">
+				<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 				<div class="form-group">
-					<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 					<h2>Signup</h2>
 					<label for="inputEmail">Email address</label>
 					<input type="email" name="email" class="form-control" id="email-input" placeholder="Enter email">
@@ -16,7 +16,7 @@
 				</div>
 				<div class="form-group">
 					<label for="inputPasswordConf">Password Confirmation</label>
-					<input type="password" name="password" class="form-control" id="password-conf-input" placeholder="Password Confirmation">
+					<input type="password" name="password_confirmation" class="form-control" id="password-conf-input" placeholder="Password Confirmation">
 					<small id="passwordConfHelp" class="form-text text-muted"></small>
 				</div>
 				<button type="submit" class="btn btn-primary">Sign Up</button>

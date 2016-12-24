@@ -13,59 +13,54 @@
 //= require jquery_ujs
 
 // // Got a bit of a start on ajaxifying some of the menu buttons/links, I started in application.js just for the initial ease of it, these would later be moved off to other locations more suited to them
-// $(document).ready(function() {
 
-// 	$('#show-all-doors').click(function(event) {
-// 	 event.preventDefault();
-// 	 console.log("Prevent");
+$(document).ready(function() {
 
-// 		$.ajax({
+	$('body').on('click', '.deck-table-cell.edit-link', function () {
+		event.preventDefault();
+		var doorId = $('.deck-table-cell.edit-link').attr('id');
+		$("#dash-block").children().hide();
 
-// 			method: "GET",
-// 			url: '/doors',
-// 			data: 
+		$.ajax({
 
-// 		})
-// 	});
+			method: "GET",
+			url: '/doors/'+doorId+'/edit',
 
-// 	targetRow = $('#table-row-'+targetId);
-// 	console.log(targetRow);
-// 	var path = '/doors/'+targetId+'/edit'
-// 	targetRow.append
+		})
 
-// 	$('.deck-table-cell.edit-link').click(function(event) {
-// 		 var targetId = event.target.id;
-// 		 console.log(targetId);
-// 		 event.preventDefault();
-// 		 console.log("CLICK");
-			
-// 		});
+		.done(function(response){
+			console.log("RESPONSE: "+response);
+			$('#dash-block').append(response);
+		})
 
-// 		$.ajax({
+	});
 
-// 		  method: "GET",
-// 		  url: path,
-//			data: 
+	$('body').on('submit', 'form.door-edit-form', function () {
+		event.preventDefault();
+		var doorId = $(this).attr('id');
+		var data = $(this).serialize();
+		$('#dash-block').children().hide();
 
-// 		})
+		$.ajax({
 
-// 		.done(function(response){
-// 			 console.log(response);
-// 		})
-// 	})
-// });
+			method: "PUT",
+			url: '/doors/'+doorId,
+			data: data
 
+		})
 
-$(function() {
+		.done(function(response){
+			console.log("RESPONSE: "+response);
+			$('#dash-block').append(response);
+		})
 
-	var Dashboard;
+	});
 
-	Dashboard = {
+	var Dashboard = {
 
 		handleMenuClick: function(clickTarget) {
-			var element;
 			$(clickTarget).removeAttr('href');
-			element = $(clickTarget).parent('li');
+			var element = $(clickTarget).parent('li');
 			if (!element.hasClass('open')) {
 				element.addClass('active');
 				return this.expandNavItem(element);
@@ -82,22 +77,21 @@ $(function() {
 		},
 
 		expandDefaultNavItem: function() {
-			var element;
 			if (!window.location.hash) {
-				element = $('li#default-nav-item');
+				var element = $('li#default-nav-item');
 				return this.expandNavItem(element);
 			}
 		},
 
-		showDashboard: function(clickTarget, selector) {
-			this.clearDashboard();
-			$(selector).show();
-			return $(clickTarget).addClass('active');
-		},
+		// showDashboard: function(clickTarget, selector) {
+		// 	this.clearDashboard();
+		// 	$(selector).show();
+		// 	return $(clickTarget).addClass('active');
+		// },
 
-		clearDashboard: function() {
-			$('.dashboard').hide();
-		},
+		// clearDashboard: function() {
+		// 	$('.dashboard').hide();
+		// },
 
 		bindEvents: function() {
 			var self;

@@ -43,9 +43,10 @@ h3#loginErrMsg {
 
 .container.dashboard-panel {
 	width: 75%;
+	overflow-y: auto
 }
 
-.form-for-text-field {
+.form-text-field {
 	width: 75%;
 }
 

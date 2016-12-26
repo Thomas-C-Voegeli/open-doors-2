@@ -1,43 +1,34 @@
-<div class="container">   
-  <div class="row">
-    <div class="col-md-12">
-      <div class="container dashboard-panel"> 
-        <form action="/doors/<%=@door.id%>" class="door-edit-form" id="<%=@door.id%>" method="put">
-         
-          <h2>Edit this Property</h2>
-          <%= form_for :door do |f| %>
-          <div class="form-group">
-            <label for="country">Country</label><br>
-            <%= f.text_field :country, class: 'form-for-text-field'%>
-          </div>
-          <div class="form-group">
-            <label for="state">State</label><br>
-            <%= f.text_field :state, class: 'form-for-text-field'%>
-          </div>
-          <div class="form-group">
-            <label for="city">City</label><br>
-            <%= f.text_field :city, class: 'form-for-text-field'%>
-          </div>
-          <div class="form-group">
-            <label for="street">Street Name</label><br>
-            <%= f.text_field :street, class: 'form-for-text-field'%>
-          </div>
-          <div class="form-group">
-            <label for="street-number">Street Number</label><br>
-            <%= f.text_field :street_number, class: 'form-for-text-field'%>
-          </div>
-          <div class="form-group">
-            <label for="zipcode">Zipcode</label><br>
-            <%= f.text_field :zipcode, class: 'form-for-text-field'%>
-          </div>
-          <button type="submit" class="btn btn-primary" id="<%=@door.id%>">Update</button>
-          <% end %>
-        </form>
-        <br>
-        <%= form_for @door, class: 'door-delete-form', method: :delete do |f| %>
-          <button type="submit" class="btn btn-primary">Delete</button>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</div>
+<form action="/doors/<%=@door.id%>" class="door-edit-form" id="<%=@door.id%>" method="put">
+	<h2>Edit this Property</h2>
+	<%= form_for :door do |f| %>
+	<div class="form-group">
+		<label for="country">Country</label><br>
+		<%= f.text_field :country, class: 'form-for-text-field'%>
+	</div>
+	<div class="form-group">
+		<label for="state">State</label><br>
+		<%= f.text_field :state, class: 'form-for-text-field'%>
+	</div>
+	<div class="form-group">
+		<label for="city">City</label><br>
+		<%= f.text_field :city, class: 'form-for-text-field'%>
+	</div>
+	<div class="form-group">
+		<label for="street">Street Name</label><br>
+		<%= f.text_field :street, class: 'form-for-text-field'%>
+	</div>
+	<div class="form-group">
+		<label for="street-number">Street Number</label><br>
+		<%= f.text_field :street_number, class: 'form-for-text-field'%>
+	</div>
+	<div class="form-group">
+		<label for="zipcode">Zipcode</label><br>
+		<%= f.text_field :zipcode, class: 'form-for-text-field'%>
+	</div>
+	<button type="submit" class="btn btn-primary update-form" id="<%=@door.id%>">Update</button>
+	<% end %>
+</form>
+<br>
+<%= form_for @door, class: 'door-delete-form', method: :delete do |f| %>
+	<button type="submit" class="btn btn-primary">Delete</button>
+<% end %>

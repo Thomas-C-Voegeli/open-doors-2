@@ -1,7 +1,7 @@
 <div class="header">
   <div class="container">
     <div class="row">
-      <div class="col-md-5"><h1><img src="http://images.clipartpanda.com/door-clipart-pull-open-door-clipart-1.jpg">OpenDoors</h1><p>A property management platform for the modern age</p></div>
+      <div class="col-md-5"><h1><img id="header-logo" src="http://images.clipartpanda.com/door-clipart-pull-open-door-clipart-1.jpg">OpenDoors</h1><p>A property management platform for the modern age</p></div>
       <% if current_user != nil %>
         <div class = "col-md-4"></div>
         <div class = "col-md-2"><span id="greeting">logged in as <span class="greeting-email"><%= current_user.email %></span></span></div>

@@ -4,6 +4,11 @@ class DoorsController < ApplicationController
 	def index
 		@user = current_user
 		@doors = @user.doors.all
+		if request.xhr?
+			render :index, layout: false
+		else
+			@doors
+		end
 	end
 
 	def create
@@ -19,11 +24,8 @@ class DoorsController < ApplicationController
 	end
 
 	def edit
-
-		puts "EDIT"
 		@door = Door.find(params[:id])
 			if request.xhr?
-				puts "IN IF"
 				render :edit, layout: false
 			end
 	end
@@ -33,6 +35,9 @@ class DoorsController < ApplicationController
 
 	def new
 		@door = Door.new
+		if request.xhr?
+				render :new, layout: false
+			end
 	end
 
 	def update
@@ -41,59 +46,21 @@ class DoorsController < ApplicationController
 		if request.xhr?
 			if @door.update(door_params)
 				@doors = @user.doors.all
-				puts "*"*100
 				render :index, layout: false
 			end
-
-			# respond_to do |format|
-			# 	puts format
-			# 	if request.xhr?
-			# 	format.html { render :layout => false}
-			# 	end
-			# end
 		else
 			redirect_to root_path
-			# if @door.update(door_params)
-			# 	@door
-			# else
-			# 	format.json { render json: @door.errors, status: :unprocessable_entity }
-			# end
 		end
-			# respond_to do |format|	
-			# 	if @door.update(door_params)
-			# 		format.html { redirect_to root_path, notice: 'Door was successfully updated.' }
-			# 		format.js   {}
-			# 		format.json { render json: @door, status: :updated, location: @door }
-			# 	else
-			# 		format.html { render action: "new" }
-			# 		format.json { render json: @door.errors, status: :unprocessable_entity }
-			# 	end
-			# end
-			
-			# if request.xhr?
-			# 	nil
-			# else
-			# 	render :edit
-			# end
-
-			# respond_to :xhtml if request.xhr? 
-			# @doors
-			# redirect_to controller: :doors, action: :index, anchor: @door.id
 
 	end
 
 	def destroy
 		door = Door.find(params[:id])
-
-		# if door.users.id == current_user.id
 		if door.destroy
 			flash[:success] = "Record deleted"
 		else
 			flash[:error] = "Error deleting that record"
 		end
-		# else
-		# 	flash[:error] = "You don't have permission to delete that record"
-		# end
 
 		redirect_to root_path
 	end

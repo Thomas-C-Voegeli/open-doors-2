@@ -41,13 +41,12 @@ h3#loginErrMsg {
 	text-align:center;
 }
 
-.container.dashboard-panel {
-	width: 75%;
-	overflow-y: auto
-}
-
 .form-text-field {
 	width: 75%;
+}
+
+.door-edit-form {
+	width: 50%;
 }
 
 .btn.btn-primary {

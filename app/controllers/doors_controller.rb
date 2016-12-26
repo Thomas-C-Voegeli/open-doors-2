@@ -1,5 +1,5 @@
 class DoorsController < ApplicationController
-	before_filter :authorize
+	before_action :authorize
 
 	def index
 		@user = current_user

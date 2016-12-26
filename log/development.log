@@ -45241,3 +45241,246 @@ Processing by DoorsController#index as */*
 Completed 200 OK in 38ms (Views: 25.9ms | ActiveRecord: 2.6ms)
 
 
+Started GET "/construction" for ::1 at 2016-12-26 13:46:23 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApplicationController#index as HTML
+  Rendering application/construction.html.erb within layouts/application
+  Rendered application/construction.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_header.html.erb (38.6ms)
+  Rendered shared/_side_navbar.html.erb (0.8ms)
+Completed 200 OK in 762ms (Views: 760.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/doors" for ::1 at 2016-12-26 13:46:26 -0800
+Processing by DoorsController#index as */*
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering doors/index.html.erb
+  [1m[36mDoor Load (0.3ms)[0m  [1m[34mSELECT "doors".* FROM "doors" INNER JOIN "doors_users" ON "doors"."id" = "doors_users"."door_id" WHERE "doors_users"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered doors/index.html.erb (24.5ms)
+Completed 200 OK in 113ms (Views: 47.5ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/logout" for ::1 at 2016-12-26 13:46:31 -0800
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2016-12-26 13:46:31 -0800
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  Rendered shared/_header.html.erb (1.8ms)
+Completed 200 OK in 59ms (Views: 55.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2016-12-26 13:46:36 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"glUNongZq64/XH27o9bloTe1dsaxEq24WHxL9jgvWA5FSIGBPXeJZOeRmpEYFsPxhNCgEvQnK4dfvQq4W5cWEw==", "email"=>"tcvoegeli@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tcvoegeli@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 93ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-12-26 13:46:36 -0800
+Processing by DoorsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering doors/index.html.erb within layouts/application
+  [1m[36mDoor Load (0.3ms)[0m  [1m[34mSELECT "doors".* FROM "doors" INNER JOIN "doors_users" ON "doors"."id" = "doors_users"."door_id" WHERE "doors_users"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered doors/index.html.erb within layouts/application (2.4ms)
+  Rendered shared/_header.html.erb (1.0ms)
+  Rendered shared/_side_navbar.html.erb (0.4ms)
+Completed 200 OK in 44ms (Views: 38.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/doors/1/edit" for ::1 at 2016-12-26 13:46:38 -0800
+Processing by DoorsController#edit as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDoor Load (0.9ms)[0m  [1m[34mSELECT  "doors".* FROM "doors" WHERE "doors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering doors/edit.html.erb
+  Rendered doors/edit.html.erb (18.0ms)
+Completed 200 OK in 45ms (Views: 41.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/doors" for ::1 at 2016-12-26 13:46:40 -0800
+Processing by DoorsController#index as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering doors/index.html.erb
+  [1m[36mDoor Load (0.3ms)[0m  [1m[34mSELECT "doors".* FROM "doors" INNER JOIN "doors_users" ON "doors"."id" = "doors_users"."door_id" WHERE "doors_users"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered doors/index.html.erb (2.5ms)
+Completed 200 OK in 22ms (Views: 19.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/doors/2/edit" for ::1 at 2016-12-26 13:46:41 -0800
+Processing by DoorsController#edit as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDoor Load (0.2ms)[0m  [1m[34mSELECT  "doors".* FROM "doors" WHERE "doors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering doors/edit.html.erb
+  Rendered doors/edit.html.erb (2.9ms)
+Completed 200 OK in 24ms (Views: 21.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/doors" for ::1 at 2016-12-26 13:46:42 -0800
+Processing by DoorsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering doors/index.html.erb
+  [1m[36mDoor Load (0.4ms)[0m  [1m[34mSELECT "doors".* FROM "doors" INNER JOIN "doors_users" ON "doors"."id" = "doors_users"."door_id" WHERE "doors_users"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered doors/index.html.erb (2.1ms)
+Completed 200 OK in 25ms (Views: 20.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/doors" for ::1 at 2016-12-26 13:46:47 -0800
+Processing by DoorsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering doors/index.html.erb
+  [1m[36mDoor Load (0.4ms)[0m  [1m[34mSELECT "doors".* FROM "doors" INNER JOIN "doors_users" ON "doors"."id" = "doors_users"."door_id" WHERE "doors_users"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered doors/index.html.erb (3.0ms)
+Completed 200 OK in 26ms (Views: 21.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2016-12-26 13:55:17 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DoorsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering doors/index.html.erb within layouts/application
+  [1m[36mDoor Load (0.6ms)[0m  [1m[34mSELECT "doors".* FROM "doors" INNER JOIN "doors_users" ON "doors"."id" = "doors_users"."door_id" WHERE "doors_users"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered doors/index.html.erb within layouts/application (23.9ms)
+  Rendered shared/_header.html.erb (1.0ms)
+  Rendered shared/_side_navbar.html.erb (0.4ms)
+Completed 200 OK in 491ms (Views: 391.2ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/doors" for ::1 at 2016-12-26 13:55:20 -0800
+Processing by DoorsController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering doors/index.html.erb
+  [1m[36mDoor Load (0.3ms)[0m  [1m[34mSELECT "doors".* FROM "doors" INNER JOIN "doors_users" ON "doors"."id" = "doors_users"."door_id" WHERE "doors_users"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered doors/index.html.erb (2.2ms)
+Completed 200 OK in 26ms (Views: 21.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/doors/1/edit" for ::1 at 2016-12-26 13:55:20 -0800
+Processing by DoorsController#edit as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDoor Load (0.3ms)[0m  [1m[34mSELECT  "doors".* FROM "doors" WHERE "doors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering doors/edit.html.erb
+  Rendered doors/edit.html.erb (16.2ms)
+Completed 200 OK in 41ms (Views: 37.4ms | ActiveRecord: 0.5ms)
+
+
+Started PUT "/doors/1" for ::1 at 2016-12-26 13:55:26 -0800
+Processing by DoorsController#update as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2AFRC8s6jOiOc2gzMPNeslgBCNyZBL+cUiv9UF5ElR4out+Ah56x6eEiEzbX3gK6+8WgAkaXtWcfWXXHmMBykA==", "door"=>{"country"=>"USA", "state"=>"KS", "city"=>"Topeka", "street"=>"Jefferson", "street_number"=>"123", "zipcode"=>"22222"}, "id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDoor Load (0.2ms)[0m  [1m[34mSELECT  "doors".* FROM "doors" WHERE "doors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[33mUPDATE "doors" SET "zipcode" = ?, "updated_at" = ? WHERE "doors"."id" = ?[0m  [["zipcode", "22222"], ["updated_at", 2016-12-26 21:55:26 UTC], ["id", 1]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  Rendering doors/index.html.erb
+  [1m[36mDoor Load (0.3ms)[0m  [1m[34mSELECT "doors".* FROM "doors" INNER JOIN "doors_users" ON "doors"."id" = "doors_users"."door_id" WHERE "doors_users"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered doors/index.html.erb (2.7ms)
+Completed 200 OK in 42ms (Views: 28.5ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/doors/new" for ::1 at 2016-12-26 13:55:29 -0800
+Processing by DoorsController#new as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering doors/new.html.erb
+  Rendered doors/new.html.erb (2.1ms)
+Completed 200 OK in 23ms (Views: 21.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/doors" for ::1 at 2016-12-26 13:55:31 -0800
+Processing by DoorsController#index as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering doors/index.html.erb
+  [1m[36mDoor Load (0.3ms)[0m  [1m[34mSELECT "doors".* FROM "doors" INNER JOIN "doors_users" ON "doors"."id" = "doors_users"."door_id" WHERE "doors_users"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered doors/index.html.erb (2.5ms)
+Completed 200 OK in 28ms (Views: 23.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/doors/1/edit" for ::1 at 2016-12-26 13:55:32 -0800
+Processing by DoorsController#edit as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDoor Load (0.6ms)[0m  [1m[34mSELECT  "doors".* FROM "doors" WHERE "doors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering doors/edit.html.erb
+  Rendered doors/edit.html.erb (2.8ms)
+Completed 200 OK in 24ms (Views: 20.4ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/doors/1" for ::1 at 2016-12-26 13:55:33 -0800
+Processing by DoorsController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+8UpaM+ATXjFKK0JKT1cUFISaJN1wU1cQRDdoNoYQdUlYaJNYfOyujBmOFl2md+85V8TjYGgkEtYiJzp2B9OsQ==", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDoor Load (0.1ms)[0m  [1m[34mSELECT  "doors".* FROM "doors" WHERE "doors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[31mDELETE FROM "doors_users" WHERE "doors_users"."door_id" = ?[0m  [["door_id", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "doors" WHERE "doors"."id" = ?[0m  [["id", 1]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/" for ::1 at 2016-12-26 13:55:33 -0800
+Processing by DoorsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering doors/index.html.erb within layouts/application
+  [1m[36mDoor Load (0.5ms)[0m  [1m[34mSELECT "doors".* FROM "doors" INNER JOIN "doors_users" ON "doors"."id" = "doors_users"."door_id" WHERE "doors_users"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered doors/index.html.erb within layouts/application (3.3ms)
+  Rendered shared/_header.html.erb (1.3ms)
+  Rendered shared/_side_navbar.html.erb (0.9ms)
+Completed 200 OK in 84ms (Views: 78.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/construction" for ::1 at 2016-12-26 13:59:12 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApplicationController#index as HTML
+  Rendering application/construction.html.erb within layouts/application
+  Rendered application/construction.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_header.html.erb (113.1ms)
+  Rendered shared/_side_navbar.html.erb (0.8ms)
+Completed 200 OK in 505ms (Views: 501.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/doors" for ::1 at 2016-12-26 13:59:15 -0800
+Processing by DoorsController#index as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering doors/index.html.erb
+  [1m[36mDoor Load (0.2ms)[0m  [1m[34mSELECT "doors".* FROM "doors" INNER JOIN "doors_users" ON "doors"."id" = "doors_users"."door_id" WHERE "doors_users"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered doors/index.html.erb (65.5ms)
+Completed 200 OK in 128ms (Views: 84.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/doors/2/edit" for ::1 at 2016-12-26 13:59:17 -0800
+Processing by DoorsController#edit as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDoor Load (0.2ms)[0m  [1m[34mSELECT  "doors".* FROM "doors" WHERE "doors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering doors/edit.html.erb
+  Rendered doors/edit.html.erb (20.1ms)
+Completed 200 OK in 52ms (Views: 49.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/doors" for ::1 at 2016-12-26 13:59:19 -0800
+Processing by DoorsController#index as */*
+  [1m[36mUser Load (9.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering doors/index.html.erb
+  [1m[36mDoor Load (0.3ms)[0m  [1m[34mSELECT "doors".* FROM "doors" INNER JOIN "doors_users" ON "doors"."id" = "doors_users"."door_id" WHERE "doors_users"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered doors/index.html.erb (3.2ms)
+Completed 200 OK in 36ms (Views: 22.3ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/doors/new" for ::1 at 2016-12-26 13:59:21 -0800
+Processing by DoorsController#new as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering doors/new.html.erb
+  Rendered doors/new.html.erb (4.9ms)
+Completed 200 OK in 36ms (Views: 33.7ms | ActiveRecord: 0.2ms)
+
+
